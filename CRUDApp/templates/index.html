@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+Home
+{% endblock %}
+
+
+{% block content %}
+
+<nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">CRUD</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'create' %}">Create</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" onclick="genPDF()">PDF</a>
+            </li>
+        </ul>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        </div>
+    </div>
+</nav>
+<br>
+
+<!-- <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {% for item in registration_list %}
+            <tr>
+                <td></td>
+                <td>{{ item.First_Name }}</td>
+                <td>{{ item.Last_Name }} </td>
+                <td><a class="btn btn-sm btn-info" href="{% url 'edit' item.id %}">Edit</a></td>
+                <td><a class="btn btn-sm btn-danger" href="{% url 'delete' item.id %}">Delete</a></td>
+            </tr>            
+        {% endfor %}
+
+    </tbody>
+  </table>
+  <br>
+
+  <ul class="pagination">
+    {% if registration_list.has_previous %}
+      <li class="page-item"><a class="page-link" href="?page=1">First</a></li>
+      <li class="page-item"></li><a class="page-link" href="?page={{ registration_list.previous_page_number }}">Previous</a></li>
+    {% endif %}
+  
+    <li class="page-item disabled"></li><a class="page-link">Page {{ registration_list.number }} of {{ registration_list.paginator.num_pages }}</a></li>
+  
+    {% if registration_list.has_next %}
+      <li class="page-item"><a class="page-link" href="?page={{ registration_list.next_page_number }}">Next</a></li>
+      <li class="page-item"></li><a class="page-link" href="?page={{ registration_list.paginator.num_pages }}">Last</a></li>
+    {% endif %}       
+  </ul>
+
+  <ul class="pagination">
+    {% if registration_list.has_previous %}
+      <li class="page-item"></li><a class="page-link" href="?page={{ registration_list.previous_page_number }}">Previous</a></li>
+    {% endif %}
+  
+    <li class="page-item disabled"></li><a class="page-link">Page {{ registration_list.number }} of {{ registration_list.paginator.num_pages }}</a></li>
+  
+    {% if registration_list.has_next %}
+      <li class="page-item"><a class="page-link" href="?page={{ registration_list.next_page_number }}">Next</a></li>
+    {% endif %}       
+  </ul> -->
+
+  <button id="pdf-button" class="btn btn-primary">PDF</button>
+
+<div id="frm">
+    <p >
+      This paragraph
+      contains a lot of lines
+      in the source code,
+      but the browser
+      ignores it.
+      </p>
+</div>
+  
+
+
+{% endblock %}
